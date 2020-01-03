@@ -27,9 +27,12 @@ class Home extends StatelessWidget {
               Icons.search,
               color: Colors.white,
             ),
-            onPressed: () {
+            onPressed: () async {
               //Chamar o searchDelegate
-              showSearch(context: context, delegate: DataSearch());
+              //pegar o texto com o result
+              String result =
+                  await showSearch(context: context, delegate: DataSearch());
+              print(result);
             },
           ),
         ],

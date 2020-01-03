@@ -32,6 +32,10 @@ class DataSearch extends SearchDelegate<String> {
   @override
   Widget buildResults(BuildContext context) {
     // TODO: implement buildResults
+
+    //Gambiarra para esperar a tela buildar, para ai sim, chamar a funcao close,
+    //se nao ele build de novo a mesma tela
+    Future.delayed(Duration.zero).then((_) => close(context, query));
     return Container();
   }
 
@@ -54,7 +58,9 @@ class DataSearch extends SearchDelegate<String> {
                 return ListTile(
                   title: Text(snapshot.data[index]),
                   leading: Icon(Icons.play_arrow),
-                  onTap: () {},
+                  onTap: () {
+                    close(context, snapshot.data[index]);
+                  },
                 );
               },
               itemCount: snapshot.data.length,
