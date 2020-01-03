@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:fluttertube/src/models/video.dart';
 //importo como http para chamar antes dos métodos e deixar mais legível o código
 import 'package:http/http.dart' as http;
@@ -23,6 +22,8 @@ class Api {
       } //function anonima
           ).toList(); //transforma em uma lista de videos
       return videos;
+    } else {
+      throw Exception("Failed to load videos");
     }
   }
 }
