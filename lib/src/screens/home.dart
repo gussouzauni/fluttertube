@@ -1,8 +1,8 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertube/src/blocs/videosBloc.dart';
 import 'package:fluttertube/src/delegates/data_search.dart';
 import 'package:fluttertube/src/widgets/video_tile.dart';
+import '../blocs/videos_bloc.dart';
 
 class Home extends StatelessWidget {
   @override

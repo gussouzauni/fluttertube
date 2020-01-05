@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 class DataSearch extends SearchDelegate<String> {
   @override
   List<Widget> buildActions(BuildContext context) {
-    // TODO: implement buildActions
     return [
       IconButton(
         icon: Icon(Icons.clear),
@@ -19,7 +18,6 @@ class DataSearch extends SearchDelegate<String> {
 
   @override
   Widget buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
     return IconButton(
       icon: AnimatedIcon(
           icon: AnimatedIcons.menu_arrow, progress: transitionAnimation),
@@ -31,17 +29,13 @@ class DataSearch extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
-
-    //Gambiarra para esperar a tela buildar, para ai sim, chamar a funcao close,
-    //se nao ele build de novo a mesma tela
+    //to wait for the screen to build, then call the close function if not he builds the same screen again
     Future.delayed(Duration.zero).then((_) => close(context, query));
     return Container();
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
     if (query.isEmpty)
       return Container();
     else
