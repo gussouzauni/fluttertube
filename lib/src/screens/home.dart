@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertube/src/blocs/favorite_bloc.dart';
 import 'package:fluttertube/src/delegates/data_search.dart';
 import 'package:fluttertube/src/models/video.dart';
+import 'package:fluttertube/src/screens/favorites.dart';
 import 'package:fluttertube/src/widgets/video_tile.dart';
 import '../blocs/videos_bloc.dart';
 
@@ -37,7 +38,11 @@ class Home extends StatelessWidget {
               Icons.star,
               color: Colors.white,
             ),
-            onPressed: () {},
+            onPressed: () {
+              //call new screen
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FavoriteScreen()));
+            },
           ),
           IconButton(
             icon: Icon(

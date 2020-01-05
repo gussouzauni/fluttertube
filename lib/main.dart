@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         child: BlocProvider(
           bloc: FavoriteBloc(),
           child: MaterialApp(
-              title: 'App com bloc e API',
+              title: 'App com Bloc e API',
               debugShowCheckedModeBanner: false,
               home: Home()),
         ));
