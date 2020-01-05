@@ -52,7 +52,7 @@ class VideoTile extends StatelessWidget {
                   if (snapshot.hasData)
                     return IconButton(
                       icon: Icon(snapshot.data.containsKey(video.id)
-                          ? Icons.star_border
+                          ? Icons.stars
                           : Icons.star_border),
                       color: Colors.white,
                       iconSize: 30,
