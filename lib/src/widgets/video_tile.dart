@@ -25,14 +25,28 @@ class VideoTile extends StatelessWidget {
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
-                      child: Text(video.title),
+                      child: Text(
+                        video.title,
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                        maxLines: 2,
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
-                      child: Text(video.channel),
+                      child: Text(
+                        video.channel,
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
                     )
                   ],
                 ),
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.star_border,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
               )
             ],
           )

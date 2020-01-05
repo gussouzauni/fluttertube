@@ -27,8 +27,15 @@ class VideosBloc extends BlocBase {
   Sink get inSearch => _searchController.sink;
 
   void _search(String search) async {
-    //return date api
-    videos = await api.search(search);
+    if (search != null) {
+      _videosController.add([]);
+      //return date api
+      videos = await api.search(search);
+    } else {
+      //add list videos with + 10 videos
+      videos += await api.nextPage();
+    }
+
     //to send date api for videoscontroller
     _videosController.add(videos);
   }
