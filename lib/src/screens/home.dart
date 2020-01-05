@@ -28,8 +28,8 @@ class Home extends StatelessWidget {
               color: Colors.white,
             ),
             onPressed: () async {
-              //Chamar o searchDelegate
-              //pegar o texto com o result
+              //call the searchDelegate
+              //get text
               String result =
                   await showSearch(context: context, delegate: DataSearch());
               print(result);

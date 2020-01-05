@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:fluttertube/src/models/video.dart';
-//importo como http para chamar antes dos métodos e deixar mais legível o código
 import 'package:http/http.dart' as http;
 
 const API_KEY = "AIzaSyBMzV1U7QdDj5gu_dH-pCVzIP9kiu3j0Lg";
@@ -19,8 +18,8 @@ class Api {
 
       List<Video> videos = decoded["items"].map<Video>((map) {
         return Video.fromJson(map);
-      } //function anonima
-          ).toList(); //transforma em uma lista de videos
+      } //function anonimouly
+          ).toList(); //transform into a list
       return videos;
     } else {
       throw Exception("Failed to load videos");
