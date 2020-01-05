@@ -1,5 +1,8 @@
+import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertube/src/blocs/videosBloc.dart';
 import 'package:fluttertube/src/delegates/data_search.dart';
+import 'package:fluttertube/src/widgets/video_tile.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -32,13 +35,27 @@ class Home extends StatelessWidget {
               //get text
               String result =
                   await showSearch(context: context, delegate: DataSearch());
-              print(result);
+              if (result != null)
+                BlocProvider.of<VideosBloc>(context).inSearch.add(result);
             },
           ),
         ],
         elevation: 0,
       ),
-      body: Container(),
+      body: StreamBuilder(
+        stream: BlocProvider.of<VideosBloc>(context).outVideos,
+        builder: (context, snapshot) {
+          if (snapshot.hasData)
+            return ListView.builder(
+              itemBuilder: (context, index) {
+                return VideoTile(snapshot.data[index]);
+              },
+              itemCount: snapshot.data.length,
+            );
+          else
+            return Container();
+        },
+      ),
     );
   }
 }
